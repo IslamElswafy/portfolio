@@ -92,7 +92,7 @@
             scope: o = e,
             ...l
         } = t;
-        if (void 0 === e.wpcf7 ? .schema) return;
+        if (void 0 === e.wpcf7?.schema) return;
         const d = { ...e.wpcf7.schema
         };
         if (void 0 !== r) {
@@ -171,8 +171,8 @@
         },
         s = (e, t) => {
             const a = `${e.wpcf7?.unitTag}-ve-${t}`.replaceAll(/[^0-9a-z_-]+/gi, "");
-            e.wpcf7.parent.querySelector(`.screen-reader-response ul li#${a}`) ? .remove(), e.querySelectorAll(`.wpcf7-form-control-wrap[data-name="${t}"]`).forEach((e => {
-                e.querySelector(".wpcf7-not-valid-tip") ? .remove(), e.querySelectorAll("[aria-invalid]").forEach((e => {
+            e.wpcf7.parent.querySelector(`.screen-reader-response ul li#${a}`)?.remove(), e.querySelectorAll(`.wpcf7-form-control-wrap[data-name="${t}"]`).forEach((e => {
+                e.querySelector(".wpcf7-not-valid-tip")?.remove(), e.querySelectorAll("[aria-invalid]").forEach((e => {
                     e.setAttribute("aria-invalid", "false")
                 })), e.querySelectorAll(".wpcf7-form-control").forEach((e => {
                     e.removeAttribute("aria-describedby"), e.classList.remove("wpcf7-not-valid"), "function" == typeof e.setCustomValidity && e.setCustomValidity("")

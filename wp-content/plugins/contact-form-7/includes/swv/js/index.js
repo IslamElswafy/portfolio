@@ -201,7 +201,7 @@
                 }))) throw new s(this)
         },
         m = function(t) {
-            if (!t.getAll(this.field).every((t => t instanceof File && this.accept ? .some((e => /^\.[a-z0-9]+$/i.test(e) ? t.name.toLowerCase().endsWith(e.toLowerCase()) : (t => {
+            if (!t.getAll(this.field).every((t => t instanceof File && this.accept?.some((e => /^\.[a-z0-9]+$/i.test(e) ? t.name.toLowerCase().endsWith(e.toLowerCase()) : (t => {
                     const e = [],
                         n = t.match(/^(?<toplevel>[a-z]+)\/(?<sub>[*]|[a-z0-9.+-]+)$/i);
                     if (n) {
@@ -216,13 +216,13 @@
                 })(e).some((e => (e = "." + e.trim(), t.name.toLowerCase().endsWith(e.toLowerCase()))))))))) throw new s(this)
         },
         u = function(t) {
-            if (!t.getAll(this.field).every((t => this.accept ? .some((e => t === String(e)))))) throw new s(this)
+            if (!t.getAll(this.field).every((t => this.accept?.some((e => t === String(e)))))) throw new s(this)
         },
         h = function(t) {
             if (!t.getAll(this.field).every((t => {
                     const e = 0 === (n = new Date(t).getDay()) ? 7 : n;
                     var n;
-                    return this.accept ? .some((t => e === parseInt(t)))
+                    return this.accept?.some((t => e === parseInt(t)))
                 }))) throw new s(this)
         },
         g = function(t) {
@@ -276,7 +276,7 @@
     window.swv = {
         validators: e,
         validate: (t, n, o = {}) => {
-            const r = (t.rules ? ? []).filter((({
+            const r = (t.rules ?? []).filter((({
                 rule: t,
                 ...n
             }) => "function" == typeof e[t] && ("function" != typeof e[t].matches || e[t].matches(n, o))));
@@ -287,7 +287,7 @@
                         rule: i,
                         ...o
                     } = n;
-                    if (t.get(o.field) ? .error) return t;
+                    if (t.get(o.field)?.error) return t;
                     try {
                         e[i].call({
                             rule: i,
